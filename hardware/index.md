@@ -11,14 +11,14 @@ The large circuit supports up to 32 row and column electrodes (for 1024 pressure
 
 - [Large Circuit Gerber Files](./assets/gerbers_32.zip)
 - [Large Circuit BOM](./assets/bom_32.csv)
-- [Large Circuit Copmponet Placement](./assets/positions_32.csv)
+- [Large Circuit Componet Placement](./assets/positions_32.csv)
 - [Large Circuit KiCad Source](./assets/source_32.zip)
 
 The small circuit supports 16 row and column electrodes (for 256 pressure sensing points), and can be ordered/assembled from [JLCPCB](https://jlcpcb.com/) for $140.92 USD
 
 - [Small Circuit Gerber Files](./assets/gebers_16.zip)
 - [Small Circuit BOM](./assets/bom_16.csv)
-- [Small Circuit Copmponet Placement](./assets/positions_16.csv)
+- [Small Circuit Componet Placement](./assets/positions_16.csv)
 - [Small Circuit KiCad Source](./assets/source_16.zip)
 
 # Firmware
