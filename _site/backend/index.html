@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Backend</title>
+  <link rel="stylesheet" href="/site.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="navbar">
+      <a href="/" class="nav-bubble">Home</a>
+      <a href="/frontend/" class="nav-bubble">Frontend</a>
+      <a href="/backend/" class="nav-bubble">Backend</a>
+      <a href="/hardware/" class="nav-bubble">Hardware</a>
+      <a href="/applications/" class="nav-bubble">Applications</a>
+    </div>
+
+    <main class="content">
+      <h1>WiReSens Python Backend</h1>
+<p>This guide walks you through setting up the Python Backend for WiReSens to record pressure data locally and reconfigure devices over USB.</p>
+<p>The backend source code is available here: <a href="./assets/WiReSensBackend-main.zip">Source Code</a></p>
+<hr>
+<h2>Setup</h2>
+<ol>
+<li>
+<p><strong>Install Python (version &gt; 3.10)</strong><br>
+You can download Python from <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
+</li>
+<li>
+<p><strong>Install required dependencies</strong><br>
+Run the following command in your terminal:</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+</li>
+<li>
+<p><strong>Create a recordings folder</strong><br>
+In the root directory of the project, create a folder called:</p>
+<pre><code>recordings
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2>Hardware</h2>
+<ol>
+<li>
+<p><strong>Plug in your microcontroller via USB.</strong></p>
+</li>
+<li>
+<p><strong>Identify the serial port assigned to your device:</strong></p>
+<ul>
+<li>
+<p><strong>Linux:</strong></p>
+<pre><code>dmesg | grep tty
+</code></pre>
+<p>Should look something like: <code>/dev/ttyUSB0</code> or <code>/dev/ttyACM0</code></p>
+</li>
+<li>
+<p><strong>macOS:</strong></p>
+<pre><code>ls /dev/tty.*
+</code></pre>
+<p>Should look something like: <code>/dev/tty.usbserial-110</code> or <code>/dev/tty.usbmodem14101</code></p>
+</li>
+<li>
+<p><strong>Windows:</strong>
+Open <strong>Device Manager</strong>, expand <strong>Ports (COM &amp; LPT)</strong>, and find something like: <code>COM5</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Update config file</strong></p>
+<p>Open <code>oneGloveserial.json</code>, locate the <code>&quot;serialPort&quot;</code> field under <code>&quot;sensors&quot;</code>, and set its value to your device’s serial port name.<br>
+Example:</p>
+<pre><code class="language-json">&quot;serialPort&quot;: &quot;/dev/ttyUSB0&quot;
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2>To Run the USB Recording Example</h2>
+<ol>
+<li>
+<p><strong>Start the backend:</strong></p>
+<pre><code>python startBackend.py
+</code></pre>
+</li>
+<li>
+<p><strong>Open the frontend in a browser:</strong><br>
+Go to: <a href="https://wi-re-sens-web.vercel.app/">https://wi-re-sens-web.vercel.app/</a></p>
+</li>
+<li>
+<p><strong>Load configuration:</strong></p>
+<ul>
+<li>Click <strong>Load Config</strong> and select <code>oneGloveserial.json</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Program Device:</strong></p>
+<ul>
+<li>If it is your first time using this device, you may have to program it before recording. Click Device Panel &gt; Edit Icon &gt; Program Device. A &quot;programmed!&quot; message will appear if this is succesful.</li>
+</ul>
+</li>
+<li>
+<p><strong>Start recording:</strong></p>
+<ul>
+<li>Click <strong>Record</strong>.<br>
+Visualization and recording will start simultaneously.<br>
+Recordings are saved to the <code>recordings/</code> folder.</li>
+</ul>
+</li>
+</ol>
+
+    </main>
+  </div>
+</body>
+</html>
