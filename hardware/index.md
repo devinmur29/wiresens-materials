@@ -39,7 +39,7 @@ Open this folder. The pioarduino extension should recognize it and configure the
 
 Connect the esp32 and open the vscode command window (Ctrl + shift + P). Search "Set project port" and select the serial port of the connected device accordingly.
 
-The upload button will flash the "nocalibrate.cpp" source to the device (this is the most up-to-date firmware)
+The upload button will flash the "nocalibrate.cpp" source to the device (this is the most up-to-date firmware)  
 ![upload](./assets/upload.png)
 
 ### Known Issues

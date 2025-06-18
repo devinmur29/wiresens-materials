@@ -16,17 +16,15 @@ The backend source code is available here: [Source Code](./assets/WiReSensBacken
 1. **Install Python (version > 3.10)**  
    You can download Python from [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-2. **Install required dependencies**  
+2. **Open WiReSensBackend folder and open New Terminal**  
+   From root directory of WiReSensBackend *Cmd + Shift + P* and select "Create Environment"  
+   Select Python 3.10 as interpreter
+
+3. **Install required dependencies**  
    Run the following command in your terminal:
 
    ```
    pip install -r requirements.txt
-   ```
-
-3. **Create a recordings folder**  
-   In the root directory of the project, create a folder called:
-   ```
-   recordings
    ```
 
 ---
@@ -56,7 +54,10 @@ The backend source code is available here: [Source Code](./assets/WiReSensBacken
    - **Windows:**
      Open **Device Manager**, expand **Ports (COM & LPT)**, and find something like: `COM5`
 
-3. **Update config file**
+3. **Select port in Serial Monitor**
+   ![upload](./assets/serial_select.png)
+
+4. **Update config file**
 
    Open `oneGloveserial.json`, locate the `"serialPort"` field under `"sensors"`, and set its value to your device’s serial port name.  
    Example:
@@ -64,6 +65,8 @@ The backend source code is available here: [Source Code](./assets/WiReSensBacken
    ```json
    "serialPort": "/dev/ttyUSB0"
    ```
+
+   ![upload](./assets/SerialPort_Rename.png)
 
 ---
 
@@ -89,4 +92,6 @@ The backend source code is available here: [Source Code](./assets/WiReSensBacken
 5. **Start recording:**
    - Click **Record**.  
      Visualization and recording will start simultaneously.  
-     Recordings are saved to the `recordings/` folder.
+     Recordings are saved to the `recordings/` folder.  
+
+   ![upload](./assets/recordings_folder.png)

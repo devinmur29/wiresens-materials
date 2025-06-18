@@ -1,4 +1,3 @@
-/* Base styling */
 body {
   background-color: #ffffff;
   color: #000000;
@@ -23,7 +22,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.2.5rem;
   margin-bottom: 2rem;
 }
 
@@ -47,7 +46,22 @@ body {
   transform: translateY(-2px);
 }
 
-/* Content styling */
+.nav-bubble.active {
+  background-color: #a020f0; 
+  color: #ffffff; /* White text */
+  border-color: #a020f0; /* Purple border */
+  box-shadow: 0 0 10px #a020f080, 0 0 20px #a020f030; /* Stronger purple glow */
+  transform: translateY(0); /* IMPORTANT: Reset any hover transform to make it look "set" */
+  pointer-events: none; 
+}
+
+.nav-bubble.active:hover {
+  background-color: #a020f0;
+  color: #ffffff;
+  border-color: #a020f0;
+  box-shadow: 0 0 10px #a020f080, 0 0 20px #a020f030;
+}
+
 .content {
   width: 100%;
   max-width: 720px;

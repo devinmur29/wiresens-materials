@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>{{ title or "WiReSens Toolkit" }}</title>
-  <link rel="stylesheet" href="/site.css" />
+  <meta charset="UTF-8" />
+  <title>{{ title or "WiReSens Toolkit" }}</title>
+  <link rel="stylesheet" href="/site.css" />
 </head>
 <body>
-  <div class="page-wrapper">
-    <div class="navbar">
-      <a href="/" class="nav-bubble">Home</a>
-      <a href="/frontend/" class="nav-bubble">Frontend</a>
-      <a href="/backend/" class="nav-bubble">Backend</a>
-      <a href="/hardware/" class="nav-bubble">Hardware</a>
-      <a href="/applications/" class="nav-bubble">Applications</a>
-    </div>
+  <div class="page-wrapper">
+    <div class="navbar">
+      <a href="/" class="nav-bubble {% if page.url == '/' %}active{% endif %}">Home</a>
+      <a href="/frontend/" class="nav-bubble {% if page.url == '/frontend/' or (page.url | startsWith('/frontend/') and page.url != '/frontend/') %}active{% endif %}">Frontend</a>
+      <a href="/backend/" class="nav-bubble {% if page.url == '/backend/' or (page.url | startsWith('/backend/') and page.url != '/backend/') %}active{% endif %}">Backend</a>
+      <a href="/hardware/" class="nav-bubble {% if page.url == '/hardware/' or (page.url | startsWith('/hardware/') and page.url != '/hardware/') %}active{% endif %}">Hardware</a>
+      <a href="/applications/" class="nav-bubble {% if page.url == '/applications/' or (page.url | startsWith('/applications/') and page.url != '/applications/') %}active{% endif %}">Applications</a>
+    </div>
 
-    <main class="content">
-      {{ content | safe }}
-    </main>
-  </div>
+    <main class="content">
+      {{ content | safe }}
+    </main>
+  </div>
+
+  <script src="/site.js"></script>
 </body>
 </html>
