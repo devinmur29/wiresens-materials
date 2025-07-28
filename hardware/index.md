@@ -44,7 +44,7 @@ The upload button will flash the "nocalibrate.cpp" source to the device (this is
 
 ### Known Issues
 
-I don't think pioarduino likes being installed simultatenously with a pre-exisitng installation of platformio. If you already have platformio install on your machine, please uninstall it from vscode, delete the .platformio folder (usually under users/`<your name>`), and install pioarduino as described above.
+There are compatibility issues with pioarduino being installed simultatenously with a pre-exisitng installation of platformio. If you already have platformio install on your machine, please uninstall it from vscode, delete the .platformio folder (usually under users/`<your name>`), and install pioarduino as described above.
 
 
 

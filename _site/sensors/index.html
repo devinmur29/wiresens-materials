@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sensors</title>
+  <link rel="stylesheet" href="/site.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="navbar">
+      <a href="/" class="nav-bubble">Home</a>
+      <a href="/frontend/" class="nav-bubble">Frontend</a>
+      <a href="/backend/" class="nav-bubble">Backend</a>
+      <a href="/hardware/" class="nav-bubble">Hardware</a>
+      <a href="/sensors/" class="nav-bubble">Sensors</a>
+      <a href="/applications/" class="nav-bubble">Applications</a>
+    </div>
+
+    <main class="content">
+      <p>Resistive Matrix-based tactile sensors can be made using a wide range of fabrication techniques. Detailed instructions for making sensors using the techniques of direct taping, flexible printed circuit boards, digital embroidery, and machine-knitting are below. Each technique has been tested and is compatible with the WiReSens Toolkit. We provide a recommended WiReSens Toolkit-compatible configuration file for each sensor based on our experiments.</p>
+<h1>Direct Taping</h1>
+<p><img src="./assets/taped.jpg" alt="taping"></p>
+<h2>Material List</h2>
+<ul>
+<li><a href="https://www.adafruit.com/product/1361">Pressure-sensitive conductive sheet (Velostat/Linqstat)</a></li>
+<li><a href="https://www.adafruit.com/product/640">Conductive thread</a></li>
+<li><a href="https://www.amazon.com/ZTTXL-43-Big-Yards-Conductive/dp/B0CL94L9L3/ref=sr_1_3?crid=139TEDO31KRTH&amp;dib=eyJ2IjoiMSJ9.8CUEC2eUsRSotBR7x0M9zuHCvaa41kNeHp-i8tPde-9LwQF3h0ZzX8tN9iPrw_c9PdBIztBRvqlKobZcffHlSJfCnr2mpeVhERe2F05pOF5wBlA1bCi2L11R9yCrZw8BAtA2Dwiz_fGfKyuNlr1uElfImP3bACXG8uqEwnGf3EIRKZssuVzelPqwOlmSUuuWO7NsBpdVq2Xu89ZL6bOtZWlN_VE05b_4R8pt8fiSJFY.9pq3ZbjTgZhnxEuRhZ5JPf3WJu5cGeeO44Nv7YJC9bk&amp;dib_tag=se&amp;keywords=conductive+fabric&amp;qid=1733161383&amp;sprefix=conductive+fabri%2Caps%2C199&amp;sr=8-3">Conductive fabric</a></li>
+<li><a href="https://www.amazon.com/Zehhe-Copper-Foil-Double-Sided-Conductive/dp/B01MR5DSCM/ref=sr_1_3?dib=eyJ2IjoiMSJ9.cqRGJNe2umEWoyvVg4GeB-hNEYmZG5s-bPvczGNWHJV3lEvPeEtq2fLUqwZNs-vlW_YgyKWf_hdWypDCMdeCa0Warbsq5Wq5dUbPkvOMmNMb0DqB5Hr5quOlWsypiDAgIMUcU4Hw2oPucoyJLSpeNxNztdSRwVC40U3SqyC-wB19JJBuDmuvAWX1_BzFhOFTB3NTmU7OTMFc6UWbrDNhI8nO4tJupPoGuLQuF0aX7Vg.M-J_iGFPyZ9avjydWS0ojiZoGXIIzHcpNXcMVRpRi_A&amp;dib_tag=se&amp;hvadid=598803698565&amp;hvdev=c&amp;hvlocphy=1018145&amp;hvnetw=g&amp;hvqmt=e&amp;hvrand=13739131640568959892&amp;hvtargid=kwd-1794410423&amp;hydadcr=2077_13503863&amp;keywords=conductive+foil+tape&amp;qid=1713291398&amp;sr=8-3">Conductive tape</a></li>
+<li><a href="https://www.amazon.com/Connectors-Pro-Conductors-1-27mm-Ribbon/dp/B08GHV6ZSX/ref=sr_1_2?dib=eyJ2IjoiMSJ9.lwjeNsWRj88HECW_QN2vSbh9OAi_jTGMhWdgwSbzX6khmvoxFWwmuzsHk8AD79M_lkbZ_W8ECeBV56ZcHHWv1vC_02hZHNbigH5mC5VQar-qB2GMqrG1C__FGGKvHpI_VedI6WYBw9xRXt4LrTPzPmvzb5uKayL0lJ53dhi_rbyaoXwJLzC65_oXRb9LKw9b1VEcfY78BOjAm6KYNuIz4_oSPhwUC8oiWauZkVtXf7zHLdbjFzwuh2ZB8iicSFQpQLkEUAcc3q9ygxpmaYhKY60voukatFVVh0EpW8-S-Y0.ta3y5hFPKaxYKe6YTwreAtCKX_VJtznYbpVYIePKN-Q&amp;dib_tag=se&amp;hvadid=570571435160&amp;hvdev=c&amp;hvlocphy=1018145&amp;hvnetw=g&amp;hvqmt=e&amp;hvrand=14076163878603723245&amp;hvtargid=kwd-315073834033&amp;hydadcr=18009_13462286&amp;keywords=34+pin+ribbon+cable&amp;qid=1713291469&amp;s=electronics&amp;sr=1-2">34-pin ribbon cable</a></li>
+<li><a href="https://www.amazon.com/CablesOnline-10-Pack-34-Pin-Connectors-FC-034-10/dp/B07W4GBQZ4/ref=sr_1_5?crid=2HMQ3HVBQH2MI&amp;dib=eyJ2IjoiMSJ9.IBqMmEq7eR1f0PRUHMmE3YgWC6FiqKyBPUueqFBJ9hfLxz_tuaNyCgpK9gTYXTD3UPELhDRHMaFA7KbzOdfitk9Q7B0LnWgVn2n7mkRlS3-TXfM3E17yuBuxirkX7t2tM6VSDdl8WHwss-E6mehQBzl6FMgoAyHgifuSSU6yhHclrpJ2IMGPIjJiUx3KOjLTyFERjJ1Aily-XuK9woeGg6yEKEXL7Ocyk4-5dTjBnCM98-PR146Osv_vqtjEXWiqgYI4Kh6GtSdeLHGIoUzQ7LYVBWO6vC-Z1kB-x1X3WfY.gHmhbyb-K_tScXs0W_t1wiPJBrR2ydqtoQZuFu3biBQ&amp;dib_tag=se&amp;keywords=34+pin+ribbon+cable+female+connector&amp;qid=1713291563&amp;s=electronics&amp;sprefix=34+pin+ribbon+cable+female+connector%2Celectronics%2C101&amp;sr=1-5">34-pin connector</a></li>
+<li><a href="https://www.amazon.com/467MP-Clear-Adhesive-Transfer-length/dp/B007Y7CV86/ref=sr_1_6?crid=4LGOBM16QLKK&amp;dib=eyJ2IjoiMSJ9.ZenxXn1UJFV5_JdMLJRBWw_yShM070XzQHB77v47ksz01RWkLaujzYqyiF_40xB5qc5dMlVVx5XIlr2CYyEkSgnYGXNxI33n8_yoGu_rdMXHFgpejrbId8Xf8oHnrpniHUBcuhH_IO-U5V5m2fEt-Sv9l4WVrWeXSf4TufbSI7mUfOle8uEBrULnJ-h7of_7ehmMwCabrS53F5gaYUaMc0v_cZomcChCrYzyg6RZ0h0.PKGq_w4_YVl2kmHXqM6aITshPr3hek69pXC53nI_qxk&amp;dib_tag=se&amp;keywords=3m+m468+tape&amp;qid=1713292002&amp;sprefix=3m+m468+tape%2Caps%2C65&amp;sr=8-6">Thin adhesive (3M 467MP or similar)</a></li>
+<li><a href="https://www.amazon.com/Saran-Premium-Plastic-Wrap-100/dp/B00J5IMDMG/ref=sr_1_6?crid=CM08OVJQ87GF&amp;dib=eyJ2IjoiMSJ9.d1GzVgGbPPXOlpV_DvEIugvJ2rkQ4gbryTgo3Npj8vWzxu-EXxPF1B4WuYxUeqeiE9oTjshFm2HtWm1E3Kj-ZAtnYaIXncjCr8XROrxJnD0orkNLDKrejoLzO0-dlX4QvhvvAPQ1HQiqXTcPEiVlt9owCX8yfUrGlxy2PSyj4ykpE17vVkn7NF5KGFMuhHFXyjePU0WW7RKMlBprcNbjp4JbRx73Bv5ctgAPgzFkKx_dqwoda6KcCSfSYkZ0NHuAhwUlHDt06Qp3WQ0DBwdZuQk9J22WRW5bhjFqsfm1f0s.lxIjaA7Iu4adwtFoVT_bST1cyEZlaVxGHmTNz6Tdzxo&amp;dib_tag=se&amp;keywords=saran+wrap&amp;qid=1713292058&amp;sprefix=saran+wrap%2Caps%2C108&amp;sr=8-6">Thin plastic wrap (e.g., Saran Wrap)</a></li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Refer to material list and prepare materials.</li>
+<li>Cut pressure-sensitive sheet into desired shape.</li>
+<li>Cut 2 pieces of thin adhesive into desired shape.</li>
+<li>Align horizontal electrodes on one of the thin adhesive.</li>
+<li>Attach the adhesive with aligned electrodes on one side of the pressure-sensitive film.</li>
+<li>Align horizontal electrodes on the other piece of thin adhesive.</li>
+<li>Attach the adhesive with aligned electrodes on the other side of the pressure-sensitive film.</li>
+<li>Carefully remove the cover of adhesive, and attach the thin plastic sheet on top of it for insulation.</li>
+<li>Repeat for the other side.</li>
+<li>Make electrical connection between the aligend vertical/horizontal electrodes with 2 sets of ribbon cables using either conductive/electrical tape or solder.</li>
+<li>Connect the ribbon cable with the readout circuit using the connector.</li>
+</ol>
+<h2>Configuration File</h2>
+<p><a href="assets/flexSensorConfig.json">tapedSensorConfig.json</a></p>
+<h1>Flexible Printed Circuit Board</h1>
+<p><img src="./assets/flex.jpg" alt="flex"></p>
+<hr>
+<h2>Material List</h2>
+<ul>
+<li><a href="https://www.mcmaster.com/catalog/131/4075/9010K51">Adhesive-Backed Silicone Rubber (McMaster 9010K51)</a></li>
+<li><a href="https://www.adafruit.com/product/1361">Pressure-sensitive Conductive Sheet (Velostat/Linqstat)</a></li>
+<li><a href="https://www.matterhackers.com/store/l/pro-series-pla/sk/MY6C8H7E">PLA Filament</a></li>
+<li><a href="https://www.amazon.com/dp/B07RY9QZ4Q">0.5 mm Pitch Flex Cable Connectors (16-pin)</a></li>
+</ul>
+<hr>
+<h2>Assets</h2>
+<ul>
+<li><a href="assets/toppcbgerbers.zip">Front PCB Gerbers</a></li>
+<li><a href="assets/toppcbplacement.pos">Front PCB Component Placement (.pos)</a></li>
+<li><a href="assets/botpcbgerbers.zip">Back PCB Gerbers</a></li>
+<li><a href="assets/botpcbplacement.pos">Back PCB Component Placement (.pos)</a></li>
+<li><a href="assets/toppcbdetails.pdf">Top PCB Manufacturing Detail (PDF)</a></li>
+<li><a href="assets/botpcbdetails.pdf">Bottom PCB Manufacturing Detail (PDF)</a></li>
+<li><a href="assets/gloveSmallNestSized.stl">3D-Printed Alignment Guide (.STL)</a></li>
+<li><a href="assets/pcbbom.xlsx">Front/Back PCB BOM (.xlsx)</a></li>
+<li><a href="assets/smallGloveCut.svg">Laser Cutting Outline (.svg)</a></li>
+<li><a href="assets/lasercutting.txt">Laser Cutting Settings (.txt)</a></li>
+</ul>
+<hr>
+<h2>Instructions</h2>
+<ol>
+<li>
+<p><strong>Order the flex PCB electrode arrays</strong>
+Use the <a href="https://www.pcbway.com/flexible.aspx">Pcbway Instant Quote Tool</a> to manufacture the top and bottom flex PCBs.</p>
+<ul>
+<li>
+<p>Submit <strong>two separate orders</strong>: one for the top array, one for the bottom array.</p>
+</li>
+<li>
+<p>Carefully follow the fabrication specifications provided in the respective manufacturing detail PDFs.</p>
+</li>
+<li>
+<p>Upload:</p>
+<ul>
+<li>The appropriate Gerber files.</li>
+<li>Component placement files (<code>.pos</code>).</li>
+<li>The shared BOM file.</li>
+</ul>
+</li>
+<li>
+<p>In the order comments, <strong>copy-paste the notes</strong> from the manufacturing detail PDFs exactly.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Laser cut the Velostat and silicone rubber layers</strong>
+Use a CO₂ laser cutter or outsource the job to a service such as:</p>
+<ul>
+<li><a href="https://www.sendcutsend.com">SendCutSend (for rubbers/plastics)</a></li>
+<li><a href="https://www.ponoko.com">Ponoko (small-scale fabrication)</a></li>
+</ul>
+<p>Instructions:</p>
+<ul>
+<li>
+<p>Use the provided <code>smallGloveCut.svg</code> outline file.</p>
+</li>
+<li>
+<p>Cut <strong>two</strong> silicone rubber layers:</p>
+<ul>
+<li>One in the <strong>default orientation</strong>.</li>
+<li>One <strong>mirrored horizontally</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Cut <strong>one</strong> Velostat sheet.</p>
+</li>
+<li>
+<p>Reference <code>lasercutting.txt</code> for ideal power/speed/frequency settings.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>3D print the alignment guide</strong>
+Use the provided <code>.STL</code> file to print the mold used for layer alignment.</p>
+<ul>
+<li>
+<p>Print using PLA or other rigid filament.</p>
+</li>
+<li>
+<p>Recommended infill: 20–40%, no supports needed.</p>
+</li>
+<li>
+<p>If you prefer to outsource, try:</p>
+<ul>
+<li><a href="https://www.treatstock.com">Treatstock</a></li>
+<li><a href="https://craftcloud3d.com">Craftcloud</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Assemble the PCB layers</strong></p>
+<ul>
+<li>Place the <strong>bottom PCB</strong> into the alignment mold.</li>
+<li>Remove the <strong>adhesive backing</strong> from the PCB (if applicable).</li>
+<li>Place the <strong>laser-cut Velostat</strong> on top, aligning carefully.</li>
+<li>Gently remove the stack from the mold, <strong>flip it upside down</strong>.</li>
+<li>Insert the <strong>top PCB</strong> into the mold.</li>
+<li>Carefully <strong>sandwich the bottom PCB and Velostat</strong> onto the top PCB.</li>
+<li>Remove the assembled three-layer structure from the mold.</li>
+</ul>
+</li>
+<li>
+<p><strong>Add the silicone layers</strong></p>
+<ul>
+<li>Place the <strong>first silicone sheet</strong> in the mold, <strong>adhesive side up</strong>.</li>
+<li>Remove the backing tape.</li>
+<li>Insert the <strong>three-layer PCB structure</strong> on top of the silicone.</li>
+<li>Remove the partial stack and repeat with the <strong>mirrored silicone sheet</strong> on the opposite side.</li>
+<li>You should now have a <strong>five-layer sandwich</strong>: silicone–PCB–Velostat–PCB–silicone.</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect the flex cables</strong></p>
+<ul>
+<li>Gently <strong>lift the 0.5 mm FFC connector latches</strong>.</li>
+<li>Insert the <strong>flex cables</strong> that connect the sensor to your readout electronics.</li>
+<li>Close the latches to secure the connection.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>Note:</strong>
+If you don’t have access to a laser cutter or 3D printer, you can <strong>outsource</strong> fabrication to online services:</p>
+<ul>
+<li><strong>Laser cutting</strong>: <a href="https://www.ponoko.com">Ponoko</a>, <a href="https://www.sendcutsend.com">SendCutSend</a></li>
+<li><strong>3D printing</strong>: <a href="https://craftcloud3d.com">Craftcloud</a>, <a href="https://www.treatstock.com">Treatstock</a></li>
+</ul>
+<hr>
+<h2>Configuration File</h2>
+<ul>
+<li><a href="assets/flexSensorConfig.json">flexSensorConfig.json</a></li>
+</ul>
+<h1>Digital Embroidery</h1>
+<p><img src="./assets/embroidered.jpg" alt="embroidered"></p>
+<h2>Material List</h2>
+<ul>
+<li>
+<p><a href="https://www.adafruit.com/product/1361">Pressure-sensitive conductive sheet (Velostat/Linqstat)</a></p>
+</li>
+<li>
+<p><a href="https://www.madeirausa.com/hc-40-highly-conductive-embroidery-thread.html">Conductive thread</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/ilauke-Bobbins-Threads-Polyester-Prewound/dp/B07QCSTRNF/ref=sr_1_1_sspa?crid=181O0Y0JPHUZ6&amp;dib=eyJ2IjoiMSJ9._W5PesZubIqhYEiqHSVLhJQ1J4kohlDhYyW28R38xnesqW3qkR6FI6RLOPGlIqkOTZimM4xMNydm5Dj3iMoNeQOhJCTKvKlEmXahTo0tD4kKsl1JgoHKhSscofUeSjD_U_a40Fmn9ew85ywhrwjb-_4mvPfDXz0RWb7R8gbfVMzUzdkVD2X-mWeS6NFJhhj_oYAeFrl4aHIqU8MltPfpdqAiwuGgoKytkBxBZbFQRO4nAyfVbhfPC2iGTUKUC0YKP2d4AxdqMm9uhGLpa449Jb44kRoeaXkYn2apvrdlp5Y.hW25ZiN1Z_ZCLAluggkA-VuiE_ZtVbiesRC2Ami_tkQ&amp;dib_tag=se&amp;keywords=conventional+embroidery+thread+top+and+bobbin+set+mader&amp;qid=1733162223&amp;s=arts-crafts&amp;sprefix=conventional+embroidery+thread+top+and+bobbin+set+mader%2Carts-crafts%2C124&amp;sr=1-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1">Conventional embroidery thread</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/Non-Woven-fusible-Interfacing-Lightweight-Single-Side/dp/B088ZH2SD2/ref=asc_df_B088ZH2SD2?mcid=d2f62532d7b630d0a2a48585b886e7e4&amp;tag=hyprod-20&amp;linkCode=df0&amp;hvadid=693594197274&amp;hvpos=&amp;hvnetw=g&amp;hvrand=4556372633610379135&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9198466&amp;hvtargid=pla-1873665551983&amp;ps">Embroidery backing</a></p>
+</li>
+</ul>
+<h2>Assets</h2>
+<ul>
+<li><a href="">Top Electrode Embroidery File (.pes)</a></li>
+<li><a href="">Bottom Electrode Embroidery File (.pes)</a></li>
+<li><a href="https://www.amazon.com/Connectors-Pro-Conductors-1-27mm-Ribbon/dp/B08GHV6ZSX/ref=sr_1_2?dib=eyJ2IjoiMSJ9.lwjeNsWRj88HECW_QN2vSbh9OAi_jTGMhWdgwSbzX6khmvoxFWwmuzsHk8AD79M_lkbZ_W8ECeBV56ZcHHWv1vC_02hZHNbigH5mC5VQar-qB2GMqrG1C__FGGKvHpI_VedI6WYBw9xRXt4LrTPzPmvzb5uKayL0lJ53dhi_rbyaoXwJLzC65_oXRb9LKw9b1VEcfY78BOjAm6KYNuIz4_oSPhwUC8oiWauZkVtXf7zHLdbjFzwuh2ZB8iicSFQpQLkEUAcc3q9ygxpmaYhKY60voukatFVVh0EpW8-S-Y0.ta3y5hFPKaxYKe6YTwreAtCKX_VJtznYbpVYIePKN-Q&amp;dib_tag=se&amp;hvadid=570571435160&amp;hvdev=c&amp;hvlocphy=1018145&amp;hvnetw=g&amp;hvqmt=e&amp;hvrand=14076163878603723245&amp;hvtargid=kwd-315073834033&amp;hydadcr=18009_13462286&amp;keywords=34+pin+ribbon+cable&amp;qid=1713291469&amp;s=electronics&amp;sr=1-2">34-pin ribbon cable</a></li>
+<li><a href="https://www.amazon.com/CablesOnline-10-Pack-34-Pin-Connectors-FC-034-10/dp/B07W4GBQZ4/ref=sr_1_5?crid=2HMQ3HVBQH2MI&amp;dib=eyJ2IjoiMSJ9.IBqMmEq7eR1f0PRUHMmE3YgWC6FiqKyBPUueqFBJ9hfLxz_tuaNyCgpK9gTYXTD3UPELhDRHMaFA7KbzOdfitk9Q7B0LnWgVn2n7mkRlS3-TXfM3E17yuBuxirkX7t2tM6VSDdl8WHwss-E6mehQBzl6FMgoAyHgifuSSU6yhHclrpJ2IMGPIjJiUx3KOjLTyFERjJ1Aily-XuK9woeGg6yEKEXL7Ocyk4-5dTjBnCM98-PR146Osv_vqtjEXWiqgYI4Kh6GtSdeLHGIoUzQ7LYVBWO6vC-Z1kB-x1X3WfY.gHmhbyb-K_tScXs0W_t1wiPJBrR2ydqtoQZuFu3biBQ&amp;dib_tag=se&amp;keywords=34+pin+ribbon+cable+female+connector&amp;qid=1713291563&amp;s=electronics&amp;sprefix=34+pin+ribbon+cable+female+connector%2Celectronics%2C101&amp;sr=1-5">34-pin connector</a></li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Refer to material list and prepare materials.</li>
+<li>Use the above digital embroidery design file or <a href="https://yyueluo.com/tactile-skin-tool/resource/pyembroidery.zip">generate your own</a></li>
+<li>Cut pressure-sensitive sheet into desired shape.</li>
+<li>Mount pressure-sensitive sheet onto the digital embroidery frame.</li>
+<li>Load conductive thread as top thread and polyester thread as bobbin.</li>
+<li>Run machine with the first embroidery pass for vertical electrodes.</li>
+<li>Load conductive thread as bobbin and polyester thread as top thread.</li>
+<li>Run machine with the second embroidery pass for horizontal electrodes.</li>
+<li>Add optional insulating layer using fabric or plastic film with adhesive.</li>
+<li>Make electrical connection between the vertical/horizontal electrodes with 2 sets of ribbon cables using either conductive/electrical tape or solder.</li>
+</ol>
+<h2>Configuration File</h2>
+<p><a href="assets/embroideredSensorConfig.json">embroideredSensorConfig.json</a></p>
+<h1>Machine Knitting</h1>
+<p><img src="./assets/knitted.jpg" alt="knitted"></p>
+<h2>Material List</h2>
+<ul>
+<li><a href="https://www.us-nano.com/us1058">Graphite nanoparticles</a></li>
+<li><a href="https://www.us-nano.com/us1088">Copper Nanoparticles</a></li>
+<li><a href="https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html#overview">PDMS</a></li>
+<li><a href="https://www.dow.com/en-us/pdp.dowsil-os-2-fluid.03169073z.html#overview">OS2</a></li>
+<li><a href="https://www.sparkfun.com/conductive-thread-60g-stainless-steel.html">Stainless Steel thread</a></li>
+<li><a href="https://knitknackshop.com/shop/tamm-yarns/tamm-bebe-tamm-solid-colors/bebe-tamm-solid-colors-t3723-pumpkin/">Acrylic Knitting Yarn</a></li>
+<li><a href="https://www.amazon.com/Connectors-Pro-Conductors-1-27mm-Ribbon/dp/B08GHV6ZSX/ref=sr_1_2?dib=eyJ2IjoiMSJ9.lwjeNsWRj88HECW_QN2vSbh9OAi_jTGMhWdgwSbzX6khmvoxFWwmuzsHk8AD79M_lkbZ_W8ECeBV56ZcHHWv1vC_02hZHNbigH5mC5VQar-qB2GMqrG1C__FGGKvHpI_VedI6WYBw9xRXt4LrTPzPmvzb5uKayL0lJ53dhi_rbyaoXwJLzC65_oXRb9LKw9b1VEcfY78BOjAm6KYNuIz4_oSPhwUC8oiWauZkVtXf7zHLdbjFzwuh2ZB8iicSFQpQLkEUAcc3q9ygxpmaYhKY60voukatFVVh0EpW8-S-Y0.ta3y5hFPKaxYKe6YTwreAtCKX_VJtznYbpVYIePKN-Q&amp;dib_tag=se&amp;hvadid=570571435160&amp;hvdev=c&amp;hvlocphy=1018145&amp;hvnetw=g&amp;hvqmt=e&amp;hvrand=14076163878603723245&amp;hvtargid=kwd-315073834033&amp;hydadcr=18009_13462286&amp;keywords=34+pin+ribbon+cable&amp;qid=1713291469&amp;s=electronics&amp;sr=1-2">34-pin ribbon cable</a></li>
+<li><a href="https://www.amazon.com/CablesOnline-10-Pack-34-Pin-Connectors-FC-034-10/dp/B07W4GBQZ4/ref=sr_1_5?crid=2HMQ3HVBQH2MI&amp;dib=eyJ2IjoiMSJ9.IBqMmEq7eR1f0PRUHMmE3YgWC6FiqKyBPUueqFBJ9hfLxz_tuaNyCgpK9gTYXTD3UPELhDRHMaFA7KbzOdfitk9Q7B0LnWgVn2n7mkRlS3-TXfM3E17yuBuxirkX7t2tM6VSDdl8WHwss-E6mehQBzl6FMgoAyHgifuSSU6yhHclrpJ2IMGPIjJiUx3KOjLTyFERjJ1Aily-XuK9woeGg6yEKEXL7Ocyk4-5dTjBnCM98-PR146Osv_vqtjEXWiqgYI4Kh6GtSdeLHGIoUzQ7LYVBWO6vC-Z1kB-x1X3WfY.gHmhbyb-K_tScXs0W_t1wiPJBrR2ydqtoQZuFu3biBQ&amp;dib_tag=se&amp;keywords=34+pin+ribbon+cable+female+connector&amp;qid=1713291563&amp;s=electronics&amp;sprefix=34+pin+ribbon+cable+female+connector%2Celectronics%2C101&amp;sr=1-5">34-pin connector</a></li>
+</ul>
+<h2>Assets</h2>
+<ul>
+<li><a href="./assets/32_inlay.DAT">Machine Knitting .dat file</a></li>
+</ul>
+<h2>Instructions</h2>
+<ol>
+<li>Prepare piezoresistive coaxial fibers using thermal curing setup as described <a href="https://www.nature.com/articles/s41928-021-00558-0#Sec6:~:text=Fabrication%20of%20coaxial%20piezoresistive%20functional%20fibre">here</a></li>
+<li>Knit garment with acrylic yarn</li>
+<li>Inlay functional fibers</li>
+<li>Make electrical connection between the vertical/horizontal functional fibers with 2 sets of ribbon cables using either conductive/electrical tape or solder.</li>
+</ol>
+<h2>Configuration File</h2>
+<p><a href="assets/knittedSensorConfig.json">knittedSensorConfig.json</a></p>
+
+    </main>
+  </div>
+</body>
+</html>
