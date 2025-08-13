@@ -7,14 +7,14 @@ title: Hardware
 
 The WireSens Toolkit comes with two open-source zero potential readout circuits for interfacing with resistive matrix-based sensors.
 
-The large circuit supports up to 32 row and column electrodes (for 1024 pressure sensing points) and can be ordered/assembled from [JLCPCB](https://jlcpcb.com/) for $90.26 USD.
+The large circuit supports up to 32 row and column electrodes (for 1024 pressure sensing points) and can be ordered/assembled from [JLCPCB](https://jlcpcb.com/) for $114.10 USD.
 
 - [Large Circuit Gerber Files](./assets/gerbers_32.zip)
 - [Large Circuit BOM](./assets/bom_32.csv)
 - [Large Circuit Componet Placement](./assets/positions_32.csv)
 - [Large Circuit KiCad Source](./assets/source_32.zip)
 
-The small circuit supports 16 row and column electrodes (for 256 pressure sensing points), and can be ordered/assembled from [JLCPCB](https://jlcpcb.com/) for $140.92 USD
+The small circuit supports 16 row and column electrodes (for 256 pressure sensing points), and can be ordered/assembled from [JLCPCB](https://jlcpcb.com/) for $48.27 USD
 
 - [Small Circuit Gerber Files](./assets/gebers_16.zip)
 - [Small Circuit BOM](./assets/bom_16.csv)
